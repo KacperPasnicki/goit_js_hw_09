@@ -2,6 +2,7 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix'
 
+const body = document.querySelector("body");
 const timer = document.querySelector('.timer')
 const datePicker = document.querySelector('#datetime-picker')
 const daysCount = document.querySelector('[data-days]')
@@ -11,6 +12,24 @@ const secondsCount = document.querySelector('[data-seconds]')
 const startBtn = document.querySelector('[data-start]')
 let selectedDates
 
+body.style.backgroundColor = "lightskyblue"
+timer.style.display = "flex"
+timer.style.margin = "30px 0 0 50px"
+timer.style.fontSize = "40px"
+
+daysCount.style.marginLeft = "10px"
+hoursCount.style.marginLeft = "10px"
+minutesCount.style.marginLeft = "10px"
+secondsCount.style.marginLeft = "10px"
+
+datePicker.style.marginLeft = "100px"
+datePicker.style.height = "40px"
+datePicker.style.width = "200px"
+datePicker.style.textAlign = "center"
+
+startBtn.style.height = "40px"
+startBtn.style.width = "75px"
+startBtn.style.height = "40px"
 
 const options = {
     enableTime: true,
@@ -86,11 +105,11 @@ flatpickr(datePicker, options);
 // }
 
 
-function addLeadingZero(num) {
-  if (`${num}`.length === 1) {
-    return (num = `${num}`.padStart(2, '0'));
+function addLeadingZero(e) {
+  if (`${e}`.length === 1) {
+    return (e = `${e}`.padStart(2, '0'));
   } else {
-    return `${num}`;
+    return `${e}`;
   }
 }
 
@@ -114,3 +133,5 @@ startBtn.addEventListener('click', () => {
   };
   const timerId = setInterval(intFunction, 1000);
 });
+
+

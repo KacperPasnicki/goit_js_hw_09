@@ -1,8 +1,23 @@
-function createPromise(position, delay) {
+import Notiflix from 'notiflix'
+
+function createPromise = (position, delay) => {
+  return ...
   const shouldResolve = Math.random() > 0.3;
   if (shouldResolve) {
-    // Fulfill
+    // Fulfill resolve...
   } else {
-    // Reject
+    // Reject reject...
   }
 }
+
+
+
+form.addEventListener....
+
+createPromise(2, 1500)
+  .then(({ position, delay }) => {
+    console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+  })
+  .catch(({ position, delay }) => {
+    console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+  });
